@@ -28,7 +28,7 @@ const questionSchema = {
 export async function generateQuizQuestions(subject: string): Promise<Question[]> {
   try {
     const response = await ai.models.generateContent({
-      model: 'gemini-2.5-pro',
+      model: 'gemini-2.5-flash',
       contents: `Generate 5 unique, engaging multiple-choice questions about ${subject} for a high school student. Ensure one correct answer and three plausible but incorrect distractors. Provide a brief explanation for the correct answer.`,
       config: {
         responseMimeType: 'application/json',
