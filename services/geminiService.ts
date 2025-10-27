@@ -1,5 +1,4 @@
-
-import { GoogleGenAI, Type, Chat, GenerateContentResponse } from "@google/genai";
+import { GoogleGenAI, Type, Chat, GenerateContentResponse, Modality } from "@google/genai";
 import type { Question, ChatMessage } from '../types';
 
 const API_KEY = process.env.API_KEY;
@@ -81,7 +80,8 @@ export async function generateSpeech(text: string): Promise<string | null> {
             model: "gemini-2.5-flash-preview-tts",
             contents: [{ parts: [{ text: text }] }],
             config: {
-                responseModalities: ['AUDIO'],
+                // FIX: Use Modality.AUDIO enum instead of magic string 'AUDIO' per coding guidelines.
+                responseModalities: [Modality.AUDIO],
                 speechConfig: {
                     voiceConfig: {
                         prebuiltVoiceConfig: { voiceName: 'Kore' },

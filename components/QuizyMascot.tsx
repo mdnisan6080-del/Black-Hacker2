@@ -39,17 +39,6 @@ const QuizyMascot: React.FC<QuizyMascotProps> = ({ state, className = 'w-32 h-32
   return (
     <div className={`${className} ${getAnimationClass()}`}>
       <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-            <style>
-                {`
-                @keyframes wiggle {
-                    0%, 100% { transform: rotate(-3deg); }
-                    50% { transform: rotate(3deg); }
-                }
-                .animate-wiggle { animation: wiggle 1s ease-in-out infinite; }
-                `}
-            </style>
-        </defs>
         <circle cx="50" cy="50" r="45" fill="#34D399" stroke="#10B981" strokeWidth="4" />
         <Eye cx={35} cy={45} />
         <Eye cx={65} cy={45} />
